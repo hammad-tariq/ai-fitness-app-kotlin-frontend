@@ -1,0 +1,182 @@
+<resources>
+    <string name="app_name">AI Fitness</string>
+    <string name="splash_title">Ai Fitness</string>
+    <string name="splash_subtitle">Meet Your Smart Fitness Companion 💪</string>
+    <string name="get_started">Get Started</string>
+    <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="continue_cta">Continue</string>
+    <string name="back">Back</string>
+
+    <string name="intro_1_title">Your Goals. Your AI Plan.</string>
+    <string name="intro_1_subtitle">Let AI create a fitness journey designed just for you.</string>
+
+    <string name="intro_2_title">100 plus workout.</string>
+    <string name="intro_2_subtitle">Find exercises tailored to your fitness goals, all in one place.</string>
+
+    <string name="intro_3_title">Health Metrics</string>
+    <string name="intro_3_subtitle">Turn every workout and milestone into measurable progress.</string>
+
+    <string name="intro_4_title">Smart Nutrition</string>
+    <string name="intro_4_subtitle">Discover smarter food choices to nourish your body and power your progress.</string>
+
+    <string name="intro_5_title">Intelligent Fitness Coach</string>
+    <string name="intro_5_subtitle">Your virtual fitness coach helps you stay focused, motivated, and on track.</string>
+
+    <!-- Assessment Flow -->
+    <string name="assessment">Assessment</string>
+    <string name="assessment_step_1">1 of 10</string>
+    <string name="assessment_step_2">2 of 10</string>
+    <string name="assessment_step_3">3 of 10</string>
+
+    <!-- Assessment 1: Fitness Goal -->
+    <string name="assessment_1_title">What\'s your fitness\ngoal/target?</string>
+    <string name="goal_lose_weight">I wanna lose weight</string>
+    <string name="goal_ai_coach">I wanna try AI Coach</string>
+    <string name="goal_bulks">I wanna get bulks</string>
+    <string name="goal_endurance">I wanna gain endurance</string>
+    <string name="goal_just_trying">Just trying out the app! 👍</string>
+
+    <!-- Assessment 2: Gender -->
+    <string name="assessment_2_title">What is your gender?</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+    <!-- Assessment 3: Weight -->
+    <string name="assessment_3_title">What is your weight?</string>
+
+    <!-- Assessment 4: Age -->
+    <string name="assessment_step_4">4 of 10</string>
+    <string name="assessment_4_title">What is your age?</string>
+
+    <!-- Assessment 5: Fitness experience -->
+    <string name="assessment_step_5">5 of 10</string>
+    <string name="assessment_5_title">Do you have previous\nfitness experience?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Assessment 6: Physical limitations -->
+    <string name="assessment_step_6">6 of 10</string>
+    <string name="assessment_6_title">Do you have any physical\nlimitations?</string>
+    <string name="limitations_hint">Type a limitation</string>
+
+    <!-- Assessment 7: Diet -->
+    <string name="assessment_step_7">7 of 10</string>
+    <string name="assessment_7_title">Do you have a specific diet\npreference?</string>
+    <string name="diet_plant_based">Plant Based</string>
+    <string name="diet_plant_based_sub">Vegan</string>
+    <string name="diet_traditional">Traditional</string>
+    <string name="diet_traditional_sub">Fruit diet</string>
+    <string name="diet_specialized">Specialized</string>
+    <string name="diet_specialized_sub">Paleo, keto, etc</string>
+    <string name="diet_carbo">Carbo Diet</string>
+    <string name="diet_carbo_sub">Bread, etc</string>
+
+    <!-- Assessment 8: Days per week -->
+    <string name="assessment_step_8">8 of 10</string>
+    <string name="assessment_8_title">How many days/wk will\nyou commit?</string>
+    <string name="days_count">%1$d Days</string>
+    <string name="days_commitment_caption">I\'m committed to exercising %1$dx weekly</string>
+
+    <!-- Assessment 9: Sleep -->
+    <string name="assessment_step_9">9 of 10</string>
+    <string name="assessment_9_title">What\'s your sleep\nquality like?</string>
+    <string name="sleep_excellent">Excellent</string>
+    <string name="sleep_excellent_hours">&gt;8 hours</string>
+    <string name="sleep_great">Great</string>
+    <string name="sleep_great_hours">7-8 hours</string>
+    <string name="sleep_normal">Normal</string>
+    <string name="sleep_normal_hours">6-7 hours</string>
+    <string name="sleep_bad">Bad</string>
+    <string name="sleep_bad_hours">3-4 hours</string>
+    <string name="sleep_insomniac">Insomniac</string>
+    <string name="sleep_insomniac_hours">&lt;2 hours</string>
+
+    <!-- Assessment 10: Training plan -->
+    <string name="assessment_step_10">10 of 10</string>
+    <string name="assessment_10_title">We create your training\nplan</string>
+    <string name="assessment_10_subtitle">We create a workout according to\ndemographic profile, activity level and\ninterests</string>
+    <string name="start_training">Start Training</string>
+
+    <!-- Home -->
+    <string name="nav_home">Home</string>
+    <string name="nav_workout">Workout</string>
+    <string name="nav_nutrition">Nutrition</string>
+    <string name="nav_progress">Progress</string>
+    <string name="nav_ai_coach">AI coach</string>
+    <string name="series_workout">8 Series Workout</string>
+    <string name="upper_strength">Upper Strength 2</string>
+    <string name="continue_workout">Continue workout</string>
+    <string name="step_counter">Step Counter</string>
+    <string name="steps_daily">Steps Daily</string>
+    <string name="steps_progress_value">%1$d/%2$d</string>
+    <string name="step_active_minutes">%1$d min</string>
+    <string name="step_kcal_short">%1$d kcal</string>
+    <string name="step_km_short">%1$.1f km</string>
+    <string name="step_notification_channel">Step Counter</string>
+    <string name="step_notification_channel_desc">Shows live step count while tracking</string>
+    <string name="step_notification_title">Step counting started</string>
+    <string name="step_notification_text">%1$d / %2$d steps today</string>
+    <string name="step_permission_needed">Allow activity recognition and notifications to count steps.</string>
+    <string name="step_sensor_unavailable">Step sensor not available on this device.</string>
+    <string name="set_daily_goal">Set Daily Goal</string>
+    <string name="set_daily_step_goal_title">Set Your Daily Step Goal</string>
+    <string name="set_daily_step_goal_subtitle">Set a daily step target to stay active, build healthy habits, and track your progress toward a healthier lifestyle.</string>
+    <string name="steps_label">Steps</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+    <string name="steps_unit">STEPS</string>
+    <string name="steps_active">Active</string>
+    <string name="current_goal">Current Goal</string>
+    <string name="est_calories">Est. Calories</string>
+    <string name="est_distance">Est. Distance</string>
+    <string name="kcal_value">%1$d kcal</string>
+    <string name="km_value">%1$.1f km</string>
+    <string name="weight_progress">Weight Progress</string>
+    <string name="current_weight">Current Weight</string>
+    <string name="target_weight">Target Weight</string>
+    <string name="edit">Edit</string>
+    <string name="progress">Progress</string>
+    <string name="week">Week</string>
+    <string name="no_record_found">No Record Found</string>
+    <string name="recent_weight_logs">Recent Weight Logs</string>
+    <string name="view_all">View All</string>
+    <string name="add_daily_log">Add Daily Log</string>
+    <string name="log_weight">Log Weight</string>
+    <string name="weight_unit_kg">kg</string>
+    <string name="weight_unit_lbs">lbs</string>
+    <string name="weight_value_kg">%1$.1f kg</string>
+    <string name="weight_value_kg_int">%1$dkg</string>
+    <string name="weight_change_this_month">%1$s this month</string>
+    <string name="current_weight_subtitle">Help us personalize your tracking experience by setting your baseline and goal.</string>
+    <string name="target_weight_subtitle">Enter your goal weight to personalize your daily activity targets</string>
+    <string name="select_all">Select All</string>
+    <string name="delete_logs">Delete Logs</string>
+    <string name="delete_recent_logs_title">Delete Recent Logs</string>
+    <string name="delete_recent_logs_message">Are you sure you want to delete recent logs</string>
+    <string name="delete">Delete</string>
+    <string name="today">Today</string>
+    <string name="weight_unset">--</string>
+    <string name="activity">Activity</string>
+    <string name="sleep_tracker">Sleep Tracker</string>
+    <string name="work_out">Work Out</string>
+    <string name="muscle_building">Muscle Building</string>
+    <string name="yoga_flexibility">Yoga &amp; Flexibility</string>
+    <string name="fat_loss_hiit">Fat Loss &amp; HIIT</string>
+    <string name="recovery_stretching">Recovery &amp; Stretching</string>
+    <string name="lower_body_workout">Lower Body Workout</string>
+    <string name="abs_core_workout">Abs &amp; Core Workout</string>
+    <string name="full_body_workout">Full Body Workout</string>
+    <string name="upper_body_workout">Upper Body Workout</string>
+    <string name="exercises_3">3 Exercises</string>
+    <string name="exercises_4">4 Exercises</string>
+    <string name="exercises_5">5 Exercises</string>
+    <string name="start">Start</string>
+    <string name="scan_your_food">Scan Your food</string>
+    <string name="scan_food_sub">Instant nutrition facts from a single photo.</string>
+    <string name="scan_now">Scan Now</string>
+    <string name="meal_planer">Meal Planer</string>
+    <string name="meal_planer_sub">Eat smart, train hard, re goals.</string>
+    <string name="plan_now">Plan Now</string>
+
+</resources>
