@@ -3,6 +3,22 @@ plugins {
     alias(libs.plugins.kotlin.compose)
 }
 
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file("local.properties")
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withInputStream { localProperties.load(it) }
+}
+
+def escapeForBuildConfig = { String value ->
+    value.replace("\\", "\\\\").replace("\"", "\\\"")
+}
+
+def fitnessApiKey = escapeForBuildConfig(localProperties.getProperty("FITNESS_API_KEY", "4df0c34638f84d2cc2ae4575fcf08a52b0a6fabb55bea4118ad4db7dabcd8711"))
+def fitnessAdminApiKey = escapeForBuildConfig(localProperties.getProperty("FITNESS_ADMIN_API_KEY", "26646a6935fb5b1a36ab56c4d2054ecff541dab393ba44393010ab092d444954"))
+def fitnessApiBaseUrl = escapeForBuildConfig(
+        localProperties.getProperty("FITNESS_API_BASE_URL", "https://fitness.aimtech.tech")
+)
+
 android {
     namespace 'com.pro.aifitnesstracker'
     compileSdk {
@@ -17,6 +33,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "FITNESS_API_BASE_URL", "\"${fitnessApiBaseUrl}\""
+        buildConfigField "String", "FITNESS_API_KEY", "\"${fitnessApiKey}\""
+        buildConfigField "String", "FITNESS_ADMIN_API_KEY", "\"${fitnessAdminApiKey}\""
     }
 
     buildTypes {
@@ -32,6 +52,7 @@ android {
     }
     buildFeatures {
         compose true
+        buildConfig true
     }
 }
 
@@ -44,6 +65,14 @@ dependencies {
     implementation libs.androidx.compose.ui.tooling.preview
     implementation libs.androidx.core.ktx
     implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.runtime.compose
+    implementation libs.okhttp
+    implementation libs.okhttp.logging
+    implementation libs.androidx.camera.camera2
+    implementation libs.androidx.camera.lifecycle
+    implementation libs.androidx.camera.view
+    implementation libs.coil.compose
+    implementation libs.kotlinx.coroutines.android
     testImplementation libs.junit
     androidTestImplementation platform(libs.androidx.compose.bom)
     androidTestImplementation libs.androidx.compose.ui.test.junit4

@@ -130,6 +130,8 @@ fun HomeScreen(
     var selectedTab by remember { mutableIntStateOf(0) }
     var showStepsDaily by remember { mutableStateOf(false) }
     var showWeightProgress by remember { mutableStateOf(false) }
+    var showActivity by remember { mutableStateOf(false) }
+    var showScanFood by remember { mutableStateOf(false) }
     var weightSetupStep by remember { mutableStateOf(WeightSetupStep.None) }
     var pendingCurrentWeight by remember { mutableStateOf<Float?>(null) }
     var weightState by remember { mutableStateOf(WeightTrackerState()) }
@@ -230,6 +232,18 @@ fun HomeScreen(
         )
         return
     }
+    if (showActivity) {
+        BackHandler { showActivity = false }
+        ActivityScreen(
+            onBack = { showActivity = false }
+        )
+        return
+    }
+    if (showScanFood) {
+        BackHandler { showScanFood = false }
+        ScanFoodHomeScreen(onBack = { showScanFood = false })
+        return
+    }
     val tabs = listOf(
         HomeTab(R.string.nav_home, R.drawable.home),
         HomeTab(R.string.nav_workout, R.drawable.workout),
@@ -258,6 +272,8 @@ fun HomeScreen(
             HomeDashboard(
                 onSetDailyGoal = { showStepsDaily = true },
                 onOpenWeightProgress = { openWeightActivity() },
+                onOpenActivity = { showActivity = true },
+                onOpenScanFood = { showScanFood = true },
                 weightState = weightState,
                 stepState = stepState,
                 modifier = Modifier
@@ -338,6 +354,8 @@ fun HomeScreen(
 private fun HomeDashboard(
     onSetDailyGoal: () -> Unit,
     onOpenWeightProgress: () -> Unit,
+    onOpenActivity: () -> Unit,
+    onOpenScanFood: () -> Unit,
     weightState: WeightTrackerState,
     stepState: StepCounterUiState,
     modifier: Modifier = Modifier
@@ -437,7 +455,11 @@ private fun HomeDashboard(
                     onClick = onOpenWeightProgress,
                     modifier = Modifier.weight(1f).fillMaxHeight()
                 )
-                ActivityMiniCard(layout = layout, modifier = Modifier.weight(1f).fillMaxHeight())
+                ActivityMiniCard(
+                    layout = layout,
+                    onClick = onOpenActivity,
+                    modifier = Modifier.weight(1f).fillMaxHeight()
+                )
                 SleepMiniCard(layout = layout, modifier = Modifier.weight(1f).fillMaxHeight())
             }
 
@@ -487,6 +509,7 @@ private fun HomeDashboard(
                     button = stringResource(R.string.scan_now),
                     buttonIconRes = R.drawable.scan_now,
                     imageRes = R.drawable.scan_food,
+                    onClick = onOpenScanFood,
                     modifier = Modifier.weight(1f).fillMaxHeight()
                 )
                 FoodActionCard(
@@ -920,6 +943,7 @@ private fun WeightProgressMiniCard(
 @Composable
 private fun ActivityMiniCard(
     layout: HomeLayout,
+    onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     MiniStatCard(
@@ -927,7 +951,7 @@ private fun ActivityMiniCard(
         iconRes = R.drawable.activity,
         panelColor = Color(0xFFD8F4FB),
         layout = layout,
-        modifier = modifier
+        modifier = modifier.clickable(onClick = onClick)
     ) {
         Canvas(
             modifier = Modifier
@@ -1113,7 +1137,8 @@ private fun FoodActionCard(
     button: String,
     @DrawableRes buttonIconRes: Int,
     @DrawableRes imageRes: Int,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onClick: (() -> Unit)? = null
 ) {
     val cardShape = RoundedCornerShape(16.dp)
     Box(
@@ -1126,6 +1151,7 @@ private fun FoodActionCard(
             )
             .clip(cardShape)
             .background(Color.White)
+            .then(if (onClick != null) Modifier.clickable(onClick = onClick) else Modifier)
     ) {
         Image(
             painter = painterResource(imageRes),
@@ -1167,7 +1193,7 @@ private fun FoodActionCard(
                 modifier = Modifier
                     .clip(RoundedCornerShape(10.dp))
                     .background(ActionBlue)
-                    .clickable { }
+                    .clickable(enabled = onClick != null) { onClick?.invoke() }
                     .padding(horizontal = 12.dp, vertical = 6.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 horizontalArrangement = Arrangement.Center

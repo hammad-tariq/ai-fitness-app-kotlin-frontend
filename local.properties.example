@@ -1,0 +1,8 @@
+## Copy to local.properties and fill in real values.
+## local.properties is gitignored — never commit secrets.
+
+sdk.dir=C\:\\Users\\YOUR_USER\\AppData\\Local\\Android\\Sdk
+
+FITNESS_API_KEY=your_client_api_key_here
+FITNESS_ADMIN_API_KEY=your_admin_api_key_here
+FITNESS_API_BASE_URL=https://fitness.aimtech.tech
